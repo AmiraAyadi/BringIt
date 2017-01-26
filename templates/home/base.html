@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="icon" href="{% static 'img/favicon.ico' %} " type="image/gif">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %} "/>
+
+    {% block title %} <title>Bienvenue sur Bring It !</title> {% endblock %}
+
+  </head>
+
+  <body>
+
+    <!-- Menu suivant -->
+    <div class="ui large top fixed hidden menu" >
+
+        <img src="{% static 'img/ballon.png' %}" class="logo_barre">
+
+        <a class="active item" id="acc_menu" href="/">Accueil</a>
+        <a class="item">Comment ça marche</a>
+        <a class="item">Vous voyagez ?</a>
+        <!-- <a class="item">besoin 1</a> -->
+        <div class="right menu">
+          <div class="item">  
+           <a href="login" class="btn">
+                <div class="ui inverted red button" id="connexction1" href="/login">Connecxion</div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="enregistrement" class="btn">
+                <div class="ui inverted red button" id="inscription1">Inscription</div>
+            </a>
+          </div>
+        </div>
+    </div>
+
+
+  <div class="pusher">
+    <nav class=" navbar-fixed-top">
+      <div class="pusher">
+        <div class="ui inverted segment" id="menu_fixe">
+          <div class="ui inverted secondary pointing menu">
+            <img src="{% static 'img/ballon.png' %}" href="/" class="logo_barre">
+            <a class="active item" id="acc_menu" href="/">Accueil</a>
+            <a class="item">Comment ça marche</a>
+            <a class="item">Vous voyagez ?</a>
+            <div class="right menu ">
+              <div class="item"> 
+                <a href="/login" class="btn">
+                  <div class="ui inverted red button"  href="/login"  id="modaltrigger">Se connecter</div>
+                </a>
+              </div>
+              <div class="item"> 
+                <a href="/enregistrement" class="btn">
+                  <div class="ui inverted red button" id="inscription">S'inscrire</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+    <section>
+
+       {% block content %}{% endblock %}
+
+    </section>
+    <!-- FOOTER -->
+    <footer class="footer" >
+      <div class="ui inverted vertical footer segment" id="foo">
+        <div class="ui  center aligned container">
+          <div class="column">
+            <div class="ui stackable inverted divided grid">
+              <div class="five wide column">
+                <h4 class="ui inverted header">BringIt!</h4>
+                <div class="ui inverted link list">
+                  <a href="#" class="item">Comment ça marche </a>
+                  <a href="#" class="item">Conditions d'utilisation</a>
+                  <a href="#" class="item">Assurance et confiance</a>
+                  <a href="#" class="item">FAQ</a>
+                </div>
+              </div>
+              <div class="five wide column">
+                <h4 class="ui inverted header">A propos</h4>
+                <div class="ui inverted link list">
+                  <a href="#" class="item">Qui sommes-nous?</a>
+                  <a href="#" class="item">Avis et témoignages</a>
+                  <a href="#" class="item">Prix applicable</a>
+                  <a href="#" class="item">Politique de confidentialité</a>
+                </div>
+              </div>
+              <div class="five wide column">
+                <h4 class="ui inverted header">Infos Pratiques</h4>
+                <div class="ui inverted link list">
+                  <a href="#" class="item">Pourquoi transporter ?</a>
+                  <a href="#" class="item">Pourquoi se faire livrer?</a>
+                  <a href="#" class="item">Nous rejoindre</a>
+                  <a href="#" class="item">Nous contacter</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ui inverted section divider" id="separateur"></div>
+          <img src="{% static 'img/ballon.png' %}" class="ui centered image">
+          <div class="social">
+            <ul class="social-network social-circle">
+                <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+            </ul>       
+          </div>
+
+          <div class="entreprise">
+            &copy; BringIt!, Inc.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    {% block extrahead %}
+
+
+        
+        <script src="{% static 'js/jquery-2.1.1.js' %}"></script>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.7/components/form.min.js"></script>
+        <!-- Semantic reset -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/components/reset.min.css"/>
+        <!-- Semantic menu -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/components/menu.min.css"/>
+        <!-- Semantic form -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.7/components/form.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+        <!-- Semantic cookie nab -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.7/components/nag.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.7/components/nag.min.js"></script>
+        <script src="http://semantic-ui.com/javascript/library/history.js"></script>
+        <script src="http://semantic-ui.com/build/packaged/javascript/semantic.min.js"></script>
+        <script src="http://semantic-ui.com/javascript/semantic.js"></script>
+        <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/components/dropdown.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/components/popup.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/components/popup.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/components/visibility.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/components/visibility.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+        <script src="{% static 'js/base.js' %} "></script>
+    {% endblock %}
+    
+
+  </body>
+
+</html>
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+{% extends "home/base2.html" %}
+{% load static %}
+
+
+<html>
+  <head>
+    {% block head %}
+      {{block.super}}
+      <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %} "/>
+      <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %} "/>
+      <title>Connexion</title>
+    {% endblock %}
+  </head>
+
+  <body>
+    {% block content %}
+      <div class="animated bounceInDown login-block" id="loginmodal">
+        <h1>Connexion</h1>
+        <form id="loginform" name="loginform" method="post" action="enregistrement.html">
+          <form action="" method="post">
+
+		    {% csrf_token %}
+		    {{ formUser['nom'] }}
+		    {{ formUser['prenom'] }}
+		    {{ formUser['email'] }}
+		    {{ formUser['mdp'] }}
+
+
+		    <input type="submit" value="Submit" />
+			</form>
+        </form>
+        <p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
+      </div>
+      {% block extrahead %}
+        {{block.super}}
+
+      {% endblock %}
+    {% endblock %}
+  </body>
+
+</html>
+
